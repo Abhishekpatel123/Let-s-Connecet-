@@ -1,0 +1,580 @@
+{% comment %} <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="static/images/firsts.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="static/images/seconds.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="static/images/hit.jpeg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<!DOCTYPE html> 
+<html> 
+      
+<head> 
+    <title>First Page</title> 
+      
+    <script type="text/javascript"> 
+        function preventBack() { 
+            window.history.forward();  
+        } 
+          
+        setTimeout("preventBack()", 0); 
+          
+        window.onunload = function () { null }; 
+    </script> 
+</head> 
+  
+<body> 
+    <h3>This is first page</h3> 
+    <hr /> 
+    <a href = "b.html">Goto second Page</a> 
+</body> 
+  
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/login.css">
+    <link rel="stylesheet" href="static/css/signup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Let's Connect | Login </title>
+</head>
+<body>
+{% comment %} -----------------comment to create a navbar----------------------- {% endcomment %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-0">
+  <a class="navbar-brand" href="/">Let's Connect</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">discussion </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contactus">contact</a>
+      </li>
+      
+    </ul>
+     <ul class="nav navbar-nav navbar-right">
+      <li><a href="/signup"><span class="glyphicon glyphicon-log-in "></span> signup</a></li>
+    </ul>
+  </div>
+ </nav>
+
+{% comment %}----------------------------------end of navbar---------------------------------------------------{% endcomment %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" >&times;</span>
+  </button>
+</div>
+ {% endfor %}
+{% endif %}
+
+
+<form method="POST" action="login">
+  {% csrf_token %}
+<div class="imgcontainer">
+    <img src="/static/images/avatar.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form> {% endcomment %}
+
+
+
+{% comment %} ===============1111111111111111111111111111111========================1111111111111111 {% endcomment %}
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- This is main  CSS link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="static/css/all.min.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/home.css">
+    <title>Discussion | Let's Connect</title>
+
+
+  </head>
+  <body>
+
+   
+  {% comment %} <nav class="navbar navbar-expand-lg navbar-dark bg-warning mb-0">
+  <a class="navbar-brand" href="/">Let's Connect</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active" >
+        <a class="nav-link" href="/" style >Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="discussion">discussion </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="contactus">contact</a>
+      </li>
+      <li class="nav-item  ">
+        <a class="nav-link add-question  " href="#"> Add question </a>
+      </li>
+      <i id="menu-bar" class="fas fa-align-left"></i>
+                <i id="cancel" class="far fa-times-circle"></i>
+      
+      <li class="nav-item  ">
+          <a href="answer" class="nav-link" title="Give answer">Give Answer</a>
+      </li>
+      
+    </ul>
+     <ul class="nav navbar-nav navbar-right">
+     {% if user.is_authenticated %}
+      <li class="nav-item">
+      <a class="nav-link"  >{{user.username}}</a>
+      </li>
+      <li><a href="logout"><span class="glyphicon glyphicon-user "></span> Log out</a></li>
+      {% else %}
+      <li><a href="signup"><span class="glyphicon glyphicon-user "></span> Sign Up</a></li>
+      <li><a href="login"><span class="glyphicon glyphicon-log-in "></span> Login</a></li>
+      {% endif %}
+    
+ 
+
+
+
+
+    </ul>
+  </div>
+ </nav> {% endcomment %}
+
+ 
+    <header>
+        <div class="mid-header">
+            <div class="logo-div">
+                <h1 > <span class="q">Let's Connect</h1>
+            </div>
+            <nav>
+                <div class="outer-nav">
+                    <div class="inner-nav">
+                        <a href="#" title="HOME"><i class="fas fa-home" class="active-home"></i></a>
+                        <a href="#" title="Notification"><i class="far fa-bell"></i></a>
+                        <a href="./answer/answer.html" title="Give answer"><i class="far fa-edit"></i></a>
+                        <a href="#" title="Add Question"><i class="far fa-plus-square"></i></a>
+                    </div>
+                    <div class="search-div">
+                        <input type="text" placeholder="   Search Here" name="search" id="search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="profile-div">
+                        <h1>A</h1>
+                    </div>
+                    <button class="btn add-question">Add Question</button>
+                </div>
+                
+                <i id="menu-bar" class="fas fa-align-left"></i>
+                <i id="cancel" class="far fa-times-circle"></i>
+                
+            </nav>
+        </div>
+    </header>
+
+
+ <!--  ============================  The contain of answer main page start  here   ============================  -->
+
+
+
+ 
+ 
+
+ 
+{% comment %} question list  is here  {% endcomment %}
+
+
+
+{% comment %} pagination start here  {% endcomment %}
+
+
+    {% comment %} <header>
+        <div class="mid-header">
+            <div class="logo-div">
+                <h1> <span class="q">Q</span> post</h1>
+            </div>
+            <nav>
+                <div class="outer-nav">
+                    <div class="inner-nav">
+                        <a href="#" title="HOME"><i class="fas fa-home" class="active-home"></i></a>
+                        <a href="#" title="Notification"><i class="far fa-bell"></i></a>
+                        <a href="./answer/answer.html" title="Give answer"><i class="far fa-edit"></i></a>
+                        <a href="#" title="Add Question"><i class="far fa-plus-square"></i></a>
+                    </div>
+                    <div class="search-div">
+                        <input type="text" placeholder="   Search Here" name="search" id="search">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="profile-div">
+                        <h1>A</h1>
+                    </div>
+                    <button class="btn add-question">Add Question</button>
+                </div>
+                
+                <i id="menu-bar" class="fas fa-align-left"></i>
+                <i id="cancel" class="far fa-times-circle"></i>
+                
+            </nav>
+        </div>
+    </header> {% endcomment %}
+
+    <!-- ============================  header part end here============================  -->
+
+    <!--  ============================  main container part start here============================  -->
+
+
+    <div class="flex outer-container">
+        <div class="flex inner-container">
+            <!--  ============================  aside part start here============================  -->
+
+            <div class="aside-bar-btn">
+                <i class="fas fa-caret-square-right open-bar"></i>
+                <i class="far fa-arrow-alt-circle-left close-bar"></i>
+            </div>
+            <aside class="flex">
+                <div class="coloum1">
+                    <i class="fas fa-laptop"></i>
+                    <a href="#">CSE</a>
+                </div>
+                <div class="coloum1">
+                    <i class="fas fa-laptop"></i>
+                    <a href="#">Mechenical</a>
+                </div>
+                <div class="coloum1">
+                    <i class="fas fa-laptop"></i>
+                    <a href="#">Civil</a>
+                </div>
+                <div class="coloum1">
+                    <i class="fas fa-laptop"></i>
+                    <a href="#">Electrical</a>
+                </div>
+                <div class="coloum1">
+                    <i class="fas fa-laptop"></i>
+                    <a href="#">Electronic</a>
+                </div>
+                <div class="coloum1">
+                    <i class="fas fa-laptop"></i>
+                    <a href="#">Agricalture</a>
+                </div>
+                <div class="coloum1">
+                    <i class="fas fa-laptop"></i>
+                    <a href="#">Aurvedha</a>
+                </div>
+            </aside>
+            <!--  ============================  aside part end here============================ -->
+
+            <div class="main-div">
+
+                <div class="outer-post-div">
+                    <div class=" flex inner-post-div1">
+                        <i class="far fa-user"></i>
+                        <p>Abhishek Patel</p>
+                    </div>
+                    <div class="inner-post-div2">
+                        <h2 class="post-question">What is your question or link?</h2>
+                    </div>
+                </div>
+
+                <div class="outer-live-post-div">
+                    <div class="inner-live-post-div">
+                        <div class="top-div">
+                            <div class="user-info-div1 flex">
+                                <div class="user-photo-div">
+                                    <img src="./image/member1.jpg" alt="">
+                                </div>
+                                <div class="user-other-info flex">
+                                    <a href="#" class="
+                                    user-name ">Abhishek Patel</a>
+                                    <a href="#" class="user-time">Updated December 5</a>
+                                </div>
+                            </div>
+                            <div class="user-info-div2">
+                                <h3><a href="#">What is something that most people don't know?</a></h3>
+                                <p>Do you Ever notice why astronauts have white and an orange-colored space suit?
+                                    Whenever reports regarding a new space mission are covered on television or the
+                                    Internet, we come across an astronaut’s photo wearing an orange spacesuit.</p>
+                                <div class="user-live-post-img-div">
+                                    <img src="./image/post1.jpg" alt="">
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="bottom-div">
+                            <div class=" flex link-div">
+                                <a class="like-btn flex" title="like">
+                                    <i class="far fa-arrow-alt-circle-up"></i><span class="like">0</span>
+                                </a>
+                                <a class="comment-btn" title="comment">
+                                    <i class="fas fa-sms"></i><span class="comment">0</span>
+                                </a>
+                                <a class="share-btn" title="share">
+                                    <i class="fas fa-share-alt"></i><span class="share">0</span>
+                                </a>
+                                <a title="menu">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="outer-live-post-div">
+                    <div class="inner-live-post-div">
+                        <div class="top-div">
+                            <div class="user-info-div1 flex">
+                                <div class="user-photo-div">
+                                    <img src="./image/member1.jpg" alt="">
+                                </div>
+                                <div class="user-other-info flex">
+                                    <a href="#" class="
+                                    user-name ">Abhishek Patel</a>
+                                    <a href="#" class="user-time">Updated December 5</a>
+                                </div>
+                            </div>
+                            <div class="user-info-div2">
+                                <h3><a href="#">What is something that most people don't know?</a></h3>
+                                <p>Do you Ever notice why astronauts have white and an orange-colored space suit?
+                                    Whenever reports regarding a new space mission are covered on television or the
+                                    Internet, we come across an astronaut’s photo wearing an orange spacesuit.</p>
+                                <div class="user-live-post-img-div">
+                                    <img src="./image/post1.jpg" alt="">
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="bottom-div">
+                            <div class=" flex link-div">
+                                <a class="like-btn flex" title="like">
+                                    <i class="far fa-arrow-alt-circle-up"></i><span class="like">0</span>
+                                </a>
+                                <a class="comment-btn" title="comment">
+                                    <i class="fas fa-sms"></i><span class="comment">0</span>
+                                </a>
+                                <a class="share-btn" title="share">
+                                    <i class="fas fa-share-alt"></i><span class="share">0</span>
+                                </a>
+                                <a title="menu">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="outer-live-post-div">
+                    <div class="inner-live-post-div">
+                        <div class="top-div">
+                            <div class="user-info-div1 flex">
+                                <div class="user-photo-div">
+                                    <img src="./image/member1.jpg" alt="">
+                                </div>
+                                <div class="user-other-info flex">
+                                    <a href="#" class="
+                                    user-name ">Abhishek Patel</a>
+                                    <a href="#" class="user-time">Updated December 5</a>
+                                </div>
+                            </div>
+                            <div class="user-info-div2">
+                                <h3><a href="#">What is something that most people don't know?</a></h3>
+                                <p>Do you Ever notice why astronauts have white and an orange-colored space suit?
+                                    Whenever reports regarding a new space mission are covered on television or the
+                                    Internet, we come across an astronaut’s photo wearing an orange spacesuit.</p>
+                                <div class="user-live-post-img-div">
+                                    <img src="./image/post1.jpg" alt="">
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="bottom-div">
+                            <div class=" flex link-div">
+                                <a class="like-btn flex" title="like">
+                                    <i class="far fa-arrow-alt-circle-up"></i><span class="like">0</span>
+                                </a>
+                                <a class="comment-btn" title="comment">
+                                    <i class="fas fa-sms"></i><span class="comment">0</span>
+                                </a>
+                                <a class="share-btn" title="share">
+                                    <i class="fas fa-share-alt"></i><span class="share">0</span>
+                                </a>
+                                <a title="menu">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================  main container part end here============================ -->
+
+    <form class="post-model-div" method="POST" action="/ans">
+        <div class="model-content-div">
+            <div class="model-top">
+                <div class="ask-ques">
+                    <h3 class="active">Ask Question</h3>
+                    <h3>Share Link</h3>
+                </div>
+                <div class="cancel-div">
+                    <i class="far fa-window-close"></i>
+                </div>
+            </div>
+            <div class="model-middle">
+                <h3>Tips on getting good answers quickly</h3>
+                <ul class="tips">
+                    <li>Make sure your question has not been asked already</li>
+                    <li>Keep your question short and to the point && Double-check grammar and spelling</li>
+                </ul>
+            </div>
+            <div class="model-middle2">
+                <div class="model-profile-content">
+                    <i class="far fa-user"></i>
+                    <p>Abhishek Patel</p>
+                </div>
+                <input name="questiontype" id="question-type" placeholder="Question type ex - Mathematic , JAVA , Python like this" type="text">
+                <input name="putquestion" id="post-question-id" placeholder="Start Your question 'what' , 'why' , 'how' " type="text">
+                <input class="file" type="file" name="file" id="">
+            </div>
+
+            <div class="model-bottom">
+                <button type="submit" class="btn1">Add Question</button>
+                <button class="btn2">Cancel</button>
+            </div>
+
+
+        </div>
+    </form>
+
+
+
+
+
+
+
+
+  
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="/static/js/same.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="static/js/all.min.js"></script>
+
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+
+<div class="aditya"><a href="#"> aditya click here</a></div>
+    
+  </body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
